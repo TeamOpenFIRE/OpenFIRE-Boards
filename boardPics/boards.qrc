@@ -6,6 +6,7 @@
         <file alias="adafruitKB2040">adafruitKB2040.svg</file>
         <file alias="arduinoNano2040">arduinoNano2040.svg</file>
         <file alias="waveshareZero">waveshareZero.svg</file>
+        <file alias="esp32-s3-devkitc-1">esp32s3.svg</file>
         <file alias="generic">unknown.svg</file>
     </qresource>
 </RCC>
