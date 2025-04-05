@@ -43,6 +43,8 @@
 #define OPENFIRE_BOARD "rpipico"
 #elifdef ARDUINO_RASPBERRY_PI_PICO_W
 #define OPENFIRE_BOARD "rpipicow"
+#elifdef ARDUINO_ESP32_S3_WROOM1_DevKitC_1_N16R8
+#define OPENFIRE_BOARD "esp32-s3-devkitc-1"
 #else
 #define OPENFIRE_BOARD "generic"
 #endif // board
@@ -288,6 +290,18 @@ public:
                                     btnUnmapped,   btnUnmapped,    btnUnmapped,    btnUnmapped,    btnUnmapped,
                                     btnUnmapped,   btnUnmapped,    btnUnmapped,    btnUnmapped,    tempPin}},
         //=====================================================================================================
+        // Notes: ESP32          /*xx*/ indicates the number of the GPIO es. /*02*/ for GPIO2
+        {"esp32-s3-devkitc-1",  {/*00*/unavailable,   /*01*/btnTrigger,     /*02*/btnGunRight,    /*03*/btnUnmapped,    /*04*/analogX,
+                                 /*05*/analogY,       /*06*/tempPin,        /*07*/btnUnmapped,    /*08*/camSDA,         /*09*/camSCL,
+                                 /*10*/btnUnmapped,   /*11*/btnUnmapped,    /*12*/btnUnmapped,    /*13*/btnUnmapped,    /*14*/btnUnmapped,
+                                 /*15*/periphSCL,     /*16*/rumblePin,      /*17*/solenoidPin,    /*18*/periphSDA,      /*19*/unavailable,
+                                 /*20*/unavailable,   /*21*/btnGunC,        /*22*/unavailable,    /*23*/unavailable,    /*24*/unavailable,
+                                 /*25*/unavailable,   /*26*/unavailable,    /*27*/unavailable,    /*28*/unavailable,    /*29*/unavailable,
+                                 /*30*/unavailable,   /*31*/unavailable,    /*32*/unavailable,    /*33*/unavailable,    /*34*/unavailable,
+                                 /*35*/btnHome,       /*36*/btnGunA,        /*37*/btnGunB,        /*38*/btnSelect,      /*39*/btnStart,
+                                 /*40*/btnGunUp,      /*41*/btnGunDown,     /*42*/btnGunLeft,     /*43*/unavailable,    /*44*/unavailable,
+                                 /*45*/btnPump,       /*46*/unavailable,    /*47*/btnPedal,       /*48*/neoPixel,       /*49*/unavailable}},
+        //=====================================================================================================
     };
 
 // Only needed for the Desktop App, don't build for microcontroller firmware!
@@ -337,6 +351,7 @@ public:
         {"adafruitKB2040",      "Adafruit Keeboar KB2040"},
         {"arduinoNanoRP2040",   "Arduino Nano Connect RP2040"},
         {"waveshareZero",       "Waveshare Zero RP2040"},
+        {"esp32-s3-devkitc-1",  "Esp32-S3 Devkitc-1"},
         // Add more here!
         {"generic",             "Unknown Board"}
     };
@@ -417,6 +432,20 @@ public:
         // Feel free to use any of the above as a template.
         // ***
 
+         //=====================================================================================================
+        // Esp32 S3 Devkitc 1
+        // Notes: Esp32          /*xx*/ indicates the number of the GPIO es. /*02*/ for GPIO2
+        {"esp32-s3-devkitc-1",  {/*00*/posNothing,    /*01*/19+posLeft,     /*02*/18+posLeft,     /*03*/posNothing,     /*04*/19+posRight,
+                                 /*05*/18+posRight,   /*06*/17+posRight,    /*07*/posNothing,     /*08*/11+posRight,    /*09*/8+posRight,
+                                 /*10*/posNothing,    /*11*/posNothing,     /*12*/posNothing,     /*13*/posNothing,     /*14*/posNothing,
+                                 /*15*/15+posRight,   /*16*/14+posRight,    /*17*/13+posRight,    /*18*/12+posRight,    /*19*/posNothing,
+                                 /*20*/posNothing,    /*21*/5+posLeft,      /*22*/posNothing,     /*23*/posNothing,     /*24*/posNothing,
+                                 /*25*/posNothing,    /*26*/posNothing,     /*27*/posNothing,     /*28*/posNothing,     /*29*/posNothing,
+                                 /*30*/posNothing,    /*31*/posNothing,     /*32*/posNothing,     /*33*/posNothing,     /*34*/posNothing,
+                                 /*35*/10+posLeft,    /*36*/11+posLeft,     /*37*/12+posLeft,     /*38*/13+posLeft,     /*39*/14+posLeft,
+                                 /*40*/15+posLeft,    /*41*/16+posLeft,     /*42*/17+posLeft,     /*43*/posNothing,     /*44*/posNothing,
+                                 /*45*/8+posLeft,     /*46*/posNothing,     /*47*/6+posLeft,      /*48*/7+posLeft,      /*49*/posNothing}},
+        //=====================================================================================================
 
         //=====================================================================================================
         // Generic layout
