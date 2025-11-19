@@ -446,25 +446,25 @@ public:
         // Board Type: ESP32
         {"esp32-s3-devkitc-1",      {/*00*/ unavailable,    btnTrigger,     btnGunRight,    btnUnmapped,    analogX,
                                      /*05*/ analogY,        tempPin,        btnUnmapped,    camSDA,         camSCL,
-                                     /*10*/ btnUnmapped,    btnUnmapped,    btnUnmapped,    btnUnmapped,    btnUnmapped,
-                                     /*15*/ periphSCL,      rumblePin,      solenoidPin,    periphSDA,      unavailable,
-                                     /*20*/ unavailable,    btnGunC,        unavailable,    unavailable,    unavailable,
+                                     /*10*/ btnUnmapped,    btnUnmapped,    btnUnmapped,    btnUnmapped,    neoPixel,
+                                     /*15*/ periphSCL,      rumblePin,      solenoidPin,    periphSDA,      btnUnmapped,
+                                     /*20*/ btnUnmapped,    btnGunC,        unavailable,    unavailable,    unavailable,
                                      /*25*/ unavailable,    unavailable,    unavailable,    unavailable,    unavailable,
                                      /*30*/ unavailable,    unavailable,    unavailable,    unavailable,    unavailable,
                                      /*35*/ btnHome,        btnGunA,        btnGunB,        btnSelect,      btnStart,
                                      /*40*/ btnGunUp,       btnGunDown,     btnGunLeft,     unavailable,    unavailable,
-                                     /*45*/ btnPump,        unavailable,    btnPedal,       neoPixel                        }},
+                                     /*45*/ btnPump,        btnPedal2,      btnPedal,       unavailable                        }},
         //=====================================================================================================================
         // Waveshare ESP32 S3 Pico
         // Board Type: ESP32
         {"waveshare-esp32-s3-pico", {/*00*/ unavailable,    btnUnmapped,    btnUnmapped,    unavailable,    camSDA,
-                                     /*05*/ camSCL,         btnUnmapped,    analogY,        analogX,        tempPin,
+                                     /*05*/ camSCL,         btnPedal2,      analogY,        analogX,        tempPin,
                                      /*10*/ btnUnmapped,    btnGunA,        btnGunB,        btnGunC,        btnStart,
                                      /*15*/ btnSelect,      btnHome,        btnGunUp,       btnGunDown,     unavailable,
-                                     /*20*/ unavailable,    neoPixel,       unavailable,    unavailable,    unavailable,
+                                     /*20*/ unavailable,    unavailable,    unavailable,    unavailable,    unavailable,
                                      /*25*/ unavailable,    unavailable,    unavailable,    unavailable,    unavailable,
                                      /*30*/ unavailable,    unavailable,    unavailable,    btnGunLeft,     btnGunRight,
-                                     /*35*/ periphSDA,      periphSCL,      btnUnmapped,    btnPump,        btnPedal,
+                                     /*35*/ periphSDA,      periphSCL,      neoPixel,       btnPump,        btnPedal,
                                      /*40*/ btnTrigger,     rumblePin,      solenoidPin,    unavailable,    unavailable,
                                      /*45*/ unavailable,    unavailable,    unavailable,    unavailable                     }},
         //=====================================================================================================================
@@ -708,16 +708,16 @@ public:
         //=====================================================================================================================
         // Espressif ESP32 S3 WROOM-1 DevkitC-1 N16R8
         // Board Type: ESP32-S3
-        {"esp32-s3-devkitc-1",      {/*00*/   posNothing,   19 | posLeft,   18 | posLeft,     posNothing,   19 | posRight,
-                                     /*05*/ 18 | posRight,  17 | posRight,    posNothing,   11 | posRight,  8  | posRight,
-                                     /*10*/   posNothing,     posNothing,     posNothing,     posNothing,     posNothing,
-                                     /*15*/ 15 | posRight,  14 | posRight,  13 | posRight,  12 | posRight,    posNothing,
-                                     /*20*/   posNothing,   5  | posLeft,     posNothing,     posNothing,     posNothing,
+        {"esp32-s3-devkitc-1",      {/*00*/   posNothing,   19 | posLeft,   18 | posLeft,  10  | posRight,   19 | posRight,
+                                     /*05*/ 18 | posRight,  17 | posRight, 16  | posRight,   11 | posRight,  8  | posRight,
+                                     /*10*/ 7  | posRight,  6  | posRight, 5  | posRight,   4  | posRight,  3  | posRight,
+                                     /*15*/ 15 | posRight,  14 | posRight,  13 | posRight,  12 | posRight,    3  | posLeft,
+                                     /*20*/  4  | posLeft,   5  | posLeft,     posNothing,     posNothing,     posNothing,
                                      /*25*/   posNothing,     posNothing,     posNothing,     posNothing,     posNothing,
                                      /*30*/   posNothing,     posNothing,     posNothing,     posNothing,     posNothing,
                                      /*35*/ 10 | posLeft,   11 | posLeft,   12 | posLeft,   13 | posLeft,   14 | posLeft,
                                      /*40*/ 15 | posLeft,   16 | posLeft,   17 | posLeft,     posNothing,     posNothing,
-                                     /*45*/ 8  | posLeft,     posNothing,   6  | posLeft,   7  | posLeft                    }},
+                                     /*45*/ 8  | posLeft,  9  | posRight,   6  | posLeft,    posNothing                    }},
         //=====================================================================================================================
         // Waveshare ESP32 S3 Pico
         // Board Type: ESP32-S3
