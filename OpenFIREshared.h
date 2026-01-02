@@ -198,6 +198,7 @@ public:
         tempWarning,
         tempShutdown,
         analogMode,
+        displayOLEDType,
         // Add here
         settingsTypesCount
     } settingsTypes_e;
@@ -217,6 +218,7 @@ public:
         {"TempWarning",         tempWarning         },
         {"TempDanger",          tempShutdown        },
         {"AnalogMode",          analogMode          },
+        {"OLEDType",            displayOLEDType     },
     };
 
     enum {
@@ -224,6 +226,14 @@ public:
         analogModeDpad,
         analogModeKeys
     } analogModeSettings_e;
+
+    enum OLEDTypes_e {
+        displayNone = 0,
+        displaySSD1306_I2C,
+        displaySH1106_I2C,
+        displaySH1107_I2C,
+        displayTypesCount
+    };
 
     // Profile data type indices
     // this MUST match the order of ProfileData_s in (FW)OpenFIREprefs
