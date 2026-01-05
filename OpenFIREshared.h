@@ -94,6 +94,10 @@ public:
         camSCL,
         periphSDA,
         periphSCL,
+        periphRX,
+        periphSCK,
+        periphTX,
+        spiOLEDCSn,
         analogX,
         analogY,
         tempPin,
@@ -133,6 +137,10 @@ public:
         {"Camera SCL",          camSCL          },
         {"Peripherals SDA",     periphSDA       },
         {"Peripherals SCL",     periphSCL       },
+        {"Peripherals RX",      periphRX        },
+        {"Peripherals SCK",     periphSCK       },
+        {"Peripherals TX",      periphTX        },
+        {"SPI OLED CS",         spiOLEDCSn      },
         {"Analog Stick X",      analogX         },
         {"Analog Stick Y",      analogY         },
         {"Temperature Sensor",  tempPin         },
@@ -161,7 +169,7 @@ public:
         lowButtonsMode,
         rumbleFF,
         invertStaticPixels,
-        i2cOLED,
+        useOLED,
         i2cOLEDaltAddr,
         // Add here
         boolTypesCount
@@ -178,7 +186,8 @@ public:
         {"LowButtons",          lowButtonsMode      },
         {"RumbFFB",             rumbleFF            },
         {"InvertStaticPixels",  invertStaticPixels  },
-        {"I2COLEDEnabled",      i2cOLED             },
+        {"I2COLEDEnabled",      useOLED             }, // compatibility bit
+        {"UseOLED",             useOLED             },
         {"I2COLEDAltAddr",      i2cOLEDaltAddr      },
     };
 
@@ -228,10 +237,12 @@ public:
     } analogModeSettings_e;
 
     enum OLEDTypes_e {
-        displayNone = 0,
-        displaySSD1306_I2C,
+        displaySSD1306_I2C = 0,
+        displaySSD1306_SPI,
         displaySH1106_I2C,
+        displaySH1106_SPI,
         displaySH1107_I2C,
+        displaySH1107_SPI,
         displayTypesCount
     };
 
