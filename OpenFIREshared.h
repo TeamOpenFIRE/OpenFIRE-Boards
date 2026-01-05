@@ -169,8 +169,9 @@ public:
         lowButtonsMode,
         rumbleFF,
         invertStaticPixels,
-        useOLED,
+        i2cOLED,
         i2cOLEDaltAddr,
+        spiOLED,
         // Add here
         boolTypesCount
     } boolTypes_e;
@@ -186,9 +187,9 @@ public:
         {"LowButtons",          lowButtonsMode      },
         {"RumbFFB",             rumbleFF            },
         {"InvertStaticPixels",  invertStaticPixels  },
-        {"I2COLEDEnabled",      useOLED             }, // compatibility bit
-        {"UseOLED",             useOLED             },
+        {"I2COLEDEnabled",      i2cOLED             },
         {"I2COLEDAltAddr",      i2cOLEDaltAddr      },
+        {"SPIOLEDEnabled",      spiOLED             },
     };
 
     // Variable settings indices
@@ -207,7 +208,8 @@ public:
         tempWarning,
         tempShutdown,
         analogMode,
-        displayOLEDType,
+        i2cOLEDType,
+        spiOLEDType,
         // Add here
         settingsTypesCount
     } settingsTypes_e;
@@ -227,7 +229,8 @@ public:
         {"TempWarning",         tempWarning         },
         {"TempDanger",          tempShutdown        },
         {"AnalogMode",          analogMode          },
-        {"OLEDType",            displayOLEDType     },
+        {"i2cOLEDType",         i2cOLEDType         },
+        {"spiOLEDType",         spiOLEDType         },
     };
 
     enum {
@@ -236,14 +239,18 @@ public:
         analogModeKeys
     } analogModeSettings_e;
 
-    enum OLEDTypes_e {
-        displaySSD1306_I2C = 0,
-        displaySSD1306_SPI,
-        displaySH1106_I2C,
-        displaySH1106_SPI,
-        displaySH1107_I2C,
-        displaySH1107_SPI,
-        displayTypesCount
+    enum I2COLEDTypes_e {
+        I2Cdisp_SSD1306 = 0,
+        I2Cdisp_SH1106,
+        I2Cdisp_SH1107,
+        i2cDisplayTypesCount
+    };
+
+    enum SPIOLEDTypes_e {
+        SPIdisp_SSD1306 = 0,
+        SPIdisp_SH1106,
+        SPIdisp_SH1107,
+        spiDisplayTypesCount
     };
 
     // Profile data type indices
