@@ -62,7 +62,7 @@ class OF_Const
 public:
     // Any new non-btn slots should ideally be added at the bottom, above the "count" line
     // Inputs Map indices
-    enum {
+    enum boardInputs_e {
         unavailable = -2,
         btnUnmapped = -1,
         btnTrigger = 0,
@@ -103,7 +103,7 @@ public:
         tempPin,
         // Add non-button inputs here
         boardInputsCount
-    } boardInputs_e;
+    };
 
     // Note: names should be written in plain english,
     // as these name strings are shared with Apps
@@ -158,7 +158,7 @@ public:
     }
 
     // Boolean/toggle settings indices
-    enum {
+    enum boolTypes_e {
         customPins = 0,
         rumble,
         solenoid,
@@ -174,7 +174,7 @@ public:
         spiOLED,
         // Add here
         boolTypesCount
-    } boolTypes_e;
+    };
 
     const std::unordered_map<std::string_view, int> boolTypes_Strings = {
         {"CustomPins",          customPins          },
@@ -193,7 +193,7 @@ public:
     };
 
     // Variable settings indices
-    enum {
+    enum settingsTypes_e {
         rumbleStrength = 0,
         rumbleInterval,
         solenoidOnLength,
@@ -212,7 +212,7 @@ public:
         spiOLEDType,
         // Add here
         settingsTypesCount
-    } settingsTypes_e;
+    };
 
     const std::unordered_map<std::string_view, int> settingsTypes_Strings = {
         {"RumbPwr",             rumbleStrength      },
@@ -233,11 +233,11 @@ public:
         {"spiOLEDType",         spiOLEDType         },
     };
 
-    enum {
+    enum analogModeSettings_e {
         analogModeStick = 0,
         analogModeDpad,
         analogModeKeys
-    } analogModeSettings_e;
+    };
 
     enum I2COLEDTypes_e {
         I2Cdisp_SSD1306 = 0,
@@ -256,7 +256,7 @@ public:
     // Profile data type indices
     // this MUST match the order of ProfileData_s in (FW)OpenFIREprefs
     // as ProfData is accessed by struct offset.
-    enum {
+    enum profSyncTypes_e {
         profTopOffset = 0,
         profBottomOffset,
         profLeftOffset,
@@ -273,7 +273,7 @@ public:
         profName,
         profDataTypes,
         profCurrent = 0xFD,
-    } profSyncTypes_e;
+    };
 
     const std::unordered_map<std::string_view, int> profSettingTypes_Strings = {
         {"TopOffset",   profTopOffset       },
@@ -294,15 +294,15 @@ public:
     };
 
     // Layout types indices
-    enum {
+    enum layoutTypes_e {
         layoutSquare = 0,
         layoutDiamond,
         // Add here
         layoutTypes
-    } layoutTypes_e;
+    };
 
     // Aspect ratio indices
-    enum {
+    enum aspectRatios_e {
         ar16_9 = 0,
         ar16_10,
         ar3_2,
@@ -310,7 +310,7 @@ public:
         // Add here
         ar4_3,
         aspectRatiosCount
-    } aspectRatios_e;
+    };
 
     /* ////
      * Shared serial control/signal codes for both boards and app.
@@ -319,7 +319,7 @@ public:
      *
      * ASCII 33-127 should be avoided whenever possible.
      */////
-    enum {
+    enum serialCmdTypes_e {
         // Docking commands
         sDock1 = 1,
         sDock2,
@@ -376,12 +376,12 @@ public:
         sClearFlash = 0xFD, // 253
         // Terminates out of any current mode, or undocks
         serialTerminator = 0xFE // 254
-    } serialCmdTypes_e;
+    };
 
-    enum {
+    enum usbIdSyncTypes_e {
         usbPID = 0,
         usbName,
-    } usbIdSyncTypes_e;
+    };
 
     /// @brief      Map of default pin mappings for each supported board
     /// @details    Key = board, int array maps to RP2040 GPIO where each value is a FW function (or unmapped).
@@ -527,10 +527,10 @@ public:
     };
 
     /// @brief      Indices for the boardArchs strings above
-    enum {
+    enum boardArchs_e {
         boardRP,
         boardESP32_S3
-    } boardArchs_e;
+    };
 
     /// @brief      Indices to be used as a bitmap for defining pin capabilities
     /// @note       Default (0) assumes the pin is digital only with no I2C or SPI capability
@@ -629,13 +629,13 @@ public:
                                  /*25*/ pinDigital,                 pinI2C1SDA | pinSPI1SCK | pinHasADC,    pinI2C1SCL | pinSPI1TX | pinHasADC,     pinSPI1RX  | pinHasADC,                 pinDigital                  }},
         };
 
-    enum {
+    enum boardBoxPositions_e {
         posNothing  = 0,
         posLeft     = 0b00000001 << 8,
         posRight    = 0b00000010 << 8,
         posMiddle   = 0b00000100 << 8,
         posCheck    = posLeft | posRight | posMiddle
-    } boardBoxPositions_e;
+    };
 
     /// @brief      Map of graphical placement for each pin in the application
     /// @details    Key = board, int vector maps to microcontroller GPIO.
