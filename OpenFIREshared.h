@@ -499,6 +499,8 @@ public:
         /* more ESP boards should be added here */
     };
 
+    static const unsigned int TEMPERATURE_SENSOR_ERROR_VALUE = 125; // ADC reading indicating sensor fault / disconnection.
+
 // Only needed for the Desktop App, don't build for microcontroller firmware!
 #ifdef OF_APP
 
