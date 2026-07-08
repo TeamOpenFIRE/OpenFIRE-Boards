@@ -474,14 +474,14 @@ public:
         // Board Type: ESP32
         {"waveshare-esp32-s3-zero", {/*00*/ unavailable,    btnUnmapped,    btnUnmapped,    btnUnmapped,    camSDA,
                                      /*05*/ camSCL,         btnTrigger,     btnGunA,        btnGunB,        btnGunC,
-                                     /*10*/ btnStart,       btnSelect,      rumblePin,      solenoidPin,    unavailable,
-                                     /*15*/ unavailable,    unavailable,    unavailable,    unavailable,    unavailable,
+                                     /*10*/ btnStart,       btnSelect,      rumblePin,      solenoidPin,    btnUnmapped,
+                                     /*15*/ btnUnmapped,    btnUnmapped,    btnUnmapped,    btnUnmapped,    unavailable,
                                      /*20*/ unavailable,    unavailable,    unavailable,    unavailable,    unavailable,
                                      /*25*/ unavailable,    unavailable,    unavailable,    unavailable,    unavailable,
                                      /*30*/ unavailable,    unavailable,    unavailable,    unavailable,    unavailable,
-                                     /*35*/ unavailable,    unavailable,    unavailable,    unavailable,    unavailable,
-                                     /*40*/ unavailable,    unavailable,    unavailable,    unavailable,    unavailable,
-                                     /*45*/ unavailable,    unavailable,    unavailable,    unavailable                     }},
+                                     /*35*/ unavailable,    unavailable,    unavailable,    btnUnmapped,    btnUnmapped,
+                                     /*40*/ btnUnmapped,    btnUnmapped,    btnUnmapped,    unavailable,    unavailable,
+                                     /*45*/ btnUnmapped,    unavailable,    unavailable,    unavailable                     }},
         //=====================================================================================================================
         /* more ESP boards should be added here */
     };
@@ -754,14 +754,14 @@ public:
         // Board Type: ESP32-S3
         {"waveshare-esp32-s3-zero", {/*00*/   posNothing,   4  | posLeft,  5  | posLeft,   6  | posLeft,   7  | posLeft,
                                      /*05*/ 8  | posLeft,   9  | posLeft,  9  | posRight,  8  | posRight,  7  | posRight,
-                                     /*10*/ 6  | posRight,  5  | posRight, 4  | posRight,  3  | posRight,     posNothing,
-                                     /*15*/   posNothing,     posNothing,     posNothing,     posNothing,     posNothing,
+                                     /*10*/ 6  | posRight,  5  | posRight, 4  | posRight,  3  | posRight,  14 | posRight,
+                                     /*15*/ 13 | posRight,  12 | posRight, 18 | posLeft,   17 | posLeft,      posNothing,
                                      /*20*/   posNothing,     posNothing,     posNothing,     posNothing,     posNothing,
                                      /*25*/   posNothing,     posNothing,     posNothing,     posNothing,     posNothing,
                                      /*30*/   posNothing,     posNothing,     posNothing,     posNothing,     posNothing,
-                                     /*35*/   posNothing,     posNothing,     posNothing,     posNothing,     posNothing,
-                                     /*40*/   posNothing,     posNothing,     posNothing,     posNothing,     posNothing,
-                                     /*45*/   posNothing,     posNothing,     posNothing,     posNothing                    }},
+                                     /*35*/   posNothing,     posNothing,     posNothing,  16 | posLeft,   15 | posLeft,
+                                     /*40*/ 14 | posLeft,   13 | posLeft,  12 | posLeft,      posNothing,     posNothing,
+                                     /*45*/ 11 | posLeft,     posNothing,     posNothing,     posNothing                    }},
         //=====================================================================================================================
 
         // Insert new ESP layouts below this one!
@@ -827,6 +827,60 @@ public:
                                         unavailable,   unavailable,    unavailable,    btnUnmapped,    btnUnmapped,
                                         btnUnmapped,   unavailable,    unavailable,    unavailable,    btnUnmapped,
                                         btnUnmapped,   btnUnmapped,    btnPedal,       btnUnmapped,    btnUnmapped}}},
+        //=====================================================================================================
+        // Raspberry Pi Pico Presets
+        // Notes: Raspberry Pi boards do not expose pins 23-25; pin 29/A3 is used for builtin chipset temp monitor
+        {"rpipico",                 {"ESP32-S3 Pico Default Pin Mapping",
+                                    {/*00*/ btnGunA,        btnGunB,        btnGunC,        btnStart,       btnSelect,
+                                     /*05*/ btnHome,        btnGunUp,       btnGunDown,     btnGunLeft,     btnGunRight,
+                                     /*10*/ periphSDA,      periphSCL,      btnUnmapped,    btnPump,        btnPedal,
+                                     /*15*/ btnTrigger,     solenoidPin,    rumblePin,      btnUnmapped,    btnUnmapped,
+                                     /*20*/ camSDA,         camSCL,         btnUnmapped,    unavailable,    unavailable,
+                                     /*25*/ unavailable,    analogY,        analogX,        tempPin,        unavailable}}},
+        //=====================================================================================================
+        // Raspberry Pi Pico W Presets
+        // Notes: Raspberry Pi boards do not expose pins 23-25; pin 29/A3 is used for builtin chipset temp monitor
+        {"rpipicow",                {"ESP32-S3 Pico Default Pin Mapping",
+                                    {/*00*/ btnGunA,        btnGunB,        btnGunC,        btnStart,       btnSelect,
+                                     /*05*/ btnHome,        btnGunUp,       btnGunDown,     btnGunLeft,     btnGunRight,
+                                     /*10*/ periphSDA,      periphSCL,      btnUnmapped,    btnPump,        btnPedal,
+                                     /*15*/ btnTrigger,     solenoidPin,    rumblePin,      btnUnmapped,    btnUnmapped,
+                                     /*20*/ camSDA,         camSCL,         btnUnmapped,    unavailable,    unavailable,
+                                     /*25*/ unavailable,    analogY,        analogX,        tempPin,        unavailable}}},
+        //=====================================================================================================
+        // Raspberry Pi Pico 2 Presets
+        // Notes: Pico 2 boards are pin-identical to Pico 1 boards
+        {"rpipico2",                {"ESP32-S3 Pico Default Pin Mapping",
+                                    {/*00*/ btnGunA,        btnGunB,        btnGunC,        btnStart,       btnSelect,
+                                     /*05*/ btnHome,        btnGunUp,       btnGunDown,     btnGunLeft,     btnGunRight,
+                                     /*10*/ periphSDA,      periphSCL,      btnUnmapped,    btnPump,        btnPedal,
+                                     /*15*/ btnTrigger,     solenoidPin,    rumblePin,      btnUnmapped,    btnUnmapped,
+                                     /*20*/ camSDA,         camSCL,         btnUnmapped,    unavailable,    unavailable,
+                                     /*25*/ unavailable,    analogY,        analogX,        tempPin,        unavailable}}},
+        //=====================================================================================================
+        // Raspberry Pi Pico 2W Presets
+        // Notes: Pico 2 boards are pin-identical to Pico 1 boards
+        {"rpipico2w",               {"ESP32-S3 Pico Default Pin Mapping",
+                                    {/*00*/ btnGunA,        btnGunB,        btnGunC,        btnStart,       btnSelect,
+                                     /*05*/ btnHome,        btnGunUp,       btnGunDown,     btnGunLeft,     btnGunRight,
+                                     /*10*/ periphSDA,      periphSCL,      btnUnmapped,    btnPump,        btnPedal,
+                                     /*15*/ btnTrigger,     solenoidPin,    rumblePin,      btnUnmapped,    btnUnmapped,
+                                     /*20*/ camSDA,         camSCL,         btnUnmapped,    unavailable,    unavailable,
+                                     /*25*/ unavailable,    analogY,        analogX,        tempPin,        unavailable}}},
+        //=====================================================================================================
+        // Waveshare ESP32 S3 Pico Presets
+        {"waveshare-esp32-s3-pico", {"Raspberry Pi Pico (all) Default Pin Mapping",
+                                    {/*00*/ unavailable,    periphSDA,      periphSCL,      unavailable,    camSDA,
+                                     /*05*/ camSCL,         btnUnmapped,    btnUnmapped,    btnUnmapped,    tempPin,
+                                     /*10*/ btnUnmapped,    btnGunA,        btnGunB,        btnGunC,        btnStart,
+                                     /*15*/ btnSelect,      btnHome,        btnGunUp,       btnGunDown,     unavailable,
+                                     /*20*/ unavailable,    unavailable,    unavailable,    unavailable,    unavailable,
+                                     /*25*/ unavailable,    unavailable,    unavailable,    unavailable,    unavailable,
+                                     /*30*/ unavailable,    unavailable,    unavailable,    btnGunLeft,     btnGunRight,
+                                     /*35*/ ledR,           ledG,           ledB,           btnPump,        btnPedal,
+                                     /*40*/ btnTrigger,     rumblePin,      solenoidPin,    unavailable,    unavailable,
+                                     /*45*/ unavailable,    unavailable,    unavailable,    unavailable                     }}},
+
     };
 
 #endif
